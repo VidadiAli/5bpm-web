@@ -191,7 +191,24 @@ divofmodul.onclick = function (e) {
     resulttoexam = Number(td1.textContent) + Number(td2.textContent) + Number(td3.textContent) + Number(td4.textContent) + Number(td5.textContent);
 
     examChild1_2.textContent = resulttoexam;
+    examChild2_2.textContent = resultofexam;
     examChild3_2.textContent = resulttoexam + Number(resultofexam);
+
+    if(Number(resultofexam)<18 && Number(resultofexam>0)){
+        students.style.backgroundColor="red";
+        alert("Çox təəssüf imtahanı keçə bilmədiniz :(");
+    }
+    else if(Number(examChild3_2.textContent)>0 && Number(examChild3_2.textContent)<51){
+        students.style.backgroundColor="red";
+        alert("Çox təəssüf imtahanı keçə bilmədiniz :(");
+    }
+    else if(Number(resultofexam)>17 && Number(examChild3_2.textContent)>50){
+        students.style.backgroundColor="#10ABAB";
+        alert("Təbriklər keçdiniz! :)")
+    }
+    else{
+        students.style.backgroundColor="#10ABAB";
+    }
 }
 
 
